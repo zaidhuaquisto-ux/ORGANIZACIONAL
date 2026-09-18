@@ -597,6 +597,15 @@ a {
         grid-template-columns: 1fr;
     }
 
+    .survey-wrap {
+        gap: 20px;
+    }
+
+    .survey-card {
+        width: 100%;
+        padding: 24px 20px;
+    }
+
     .nav {
         flex-wrap: wrap;
         justify-content: space-between;
@@ -630,6 +639,10 @@ a {
 }
 
 @media (max-width: 520px) {
+    .section {
+        padding: 72px 0;
+    }
+
     .hero {
         padding-top: 64px;
     }
@@ -652,6 +665,23 @@ a {
         align-items: stretch;
     }
 
+    .survey-wrap,
+    .contact-wrap {
+        gap: 16px;
+    }
+
+    .survey-copy h2,
+    .section h2 {
+        font-size: 1.8rem;
+    }
+
+    .survey-card,
+    .contact-card {
+        text-align: left;
+        padding: 20px 16px;
+    }
+
+    .survey-card .btn,
     .btn {
         width: 100%;
     }
