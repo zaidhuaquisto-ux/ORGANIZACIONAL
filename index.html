@@ -234,26 +234,54 @@
                             <span>Carrera</span>
                             <strong>Psicología / UTP</strong>
                         </div>
-                        <div>
-                            <span>Correo</span>
-                            <a href="mailto:U22321790@utp.edu.pe">U22321790@utp.edu.pe</a>
-                        </div>
                     </div>
                 </div>
 
                 <div class="contact-card">
-                    <h3>Consulta o coordinación</h3>
-                    <form>
-                        <label>
-                            Nombre
-                            <input type="text" placeholder="Tu nombre">
-                        </label>
-                        <label>
-                            Mensaje
-                            <textarea placeholder="Escribe tu mensaje..."></textarea>
-                        </label>
-                        <button type="button" class="btn btn--primary">Enviar</button>
-                    </form>
+                    <div class="contact-card__header">
+                        <h3>Consulta o coordinación</h3>
+                        <span class="contact-badge">Respuesta rápida</span>
+                    </div>
+                    <p>
+                        Si tienes dudas o deseas coordinar alguna información, puedes escribir directamente a alguno de nosotros.
+                    </p>
+                    <div class="contact-actions">
+                        <button type="button" class="btn btn--primary contact-trigger">Escribir por correo</button>
+                    
+                    </div>
+                </div>
+
+                <div class="contact-picker" id="contactPicker" aria-hidden="true">
+                    <div class="contact-picker__backdrop" data-close="true"></div>
+                    <div class="contact-picker__panel" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+                        <div class="contact-picker__header">
+                            <h4 id="contactTitle">Elegir destinatario</h4>
+                            <button type="button" class="contact-close" aria-label="Cerrar selector">×</button>
+                        </div>
+
+                        <div class="contact-picker__list">
+                            <a class="contact-recipient" href="mailto:zaid@utp.edu.pe?subject=Consulta%20sobre%20el%20diagn%C3%B3stico%20organizacional">
+                                <span>Zaid Joseph Huaquisto Zapana</span>
+                                <small>Enviar correo</small>
+                            </a>
+                            <a class="contact-recipient" href="mailto:ronny@utp.edu.pe?subject=Consulta%20sobre%20el%20diagn%C3%B3stico%20organizacional">
+                                <span>Ronny Billy Flores Chino</span>
+                                <small>Enviar correo</small>
+                            </a>
+                            <a class="contact-recipient" href="mailto:yeimy@utp.edu.pe?subject=Consulta%20sobre%20el%20diagn%C3%B3stico%20organizacional">
+                                <span>Yeimy Vanesa Salas Mendoza</span>
+                                <small>Enviar correo</small>
+                            </a>
+                            <a class="contact-recipient" href="mailto:elian@utp.edu.pe?subject=Consulta%20sobre%20el%20diagn%C3%B3stico%20organizacional">
+                                <span>Elian David Mendoza Quispe</span>
+                                <small>Enviar correo</small>
+                            </a>
+                            <a class="contact-recipient" href="mailto:patricia@utp.edu.pe?subject=Consulta%20sobre%20el%20diagn%C3%B3stico%20organizacional">
+                                <span>Patricia Alejandra Rojas Torres</span>
+                                <small>Enviar correo</small>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

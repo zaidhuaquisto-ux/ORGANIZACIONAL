@@ -509,6 +509,7 @@ a {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 30px;
+    align-items: stretch;
 }
 
 .contact-list {
@@ -544,34 +545,144 @@ a {
 
 .contact-card {
     padding: 28px 22px;
+    display: grid;
+    gap: 16px;
+    background: linear-gradient(135deg, rgba(11, 44, 95, 0.04), rgba(217, 177, 95, 0.08));
+    border: 1px solid rgba(11, 44, 95, 0.08);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    align-self: center;
+    max-width: 100%;
 }
 
-.contact-card form {
-    display: grid;
-    gap: 18px;
+.contact-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
 }
 
-.contact-card label {
+.contact-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(29, 122, 77, 0.12);
+    border: 1px solid rgba(29, 122, 77, 0.2);
+    color: var(--melgar-green);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.contact-card p {
+    color: var(--gray-700);
+}
+
+.contact-actions {
     display: grid;
-    gap: 8px;
+    gap: 14px;
+}
+
+.contact-email-link {
+    color: var(--utp-blue);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.contact-email-link:hover {
+    color: var(--melgar-red);
+}
+
+.contact-picker {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1200;
+}
+
+.contact-picker.is-open {
+    display: flex;
+}
+
+.contact-picker__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.contact-picker__panel {
+    position: relative;
+    width: min(92vw, 520px);
+    max-height: 80vh;
+    overflow: auto;
+    background: var(--white);
+    border-radius: 24px;
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.25);
+    padding: 22px 20px 18px;
+    border: 1px solid rgba(11, 44, 95, 0.08);
+}
+
+.contact-picker__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.contact-picker__header h4 {
+    color: var(--utp-blue);
+    font-size: 1.2rem;
+}
+
+.contact-close {
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(11, 44, 95, 0.08);
+    color: var(--utp-blue);
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.contact-picker__list {
+    display: grid;
+    gap: 12px;
+}
+
+.contact-recipient {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(11, 44, 95, 0.08);
+    background: linear-gradient(180deg, rgba(11, 44, 95, 0.02), rgba(217, 177, 95, 0.06));
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-recipient:hover {
+    transform: translateY(-1px);
+    border-color: rgba(11, 44, 95, 0.18);
+}
+
+.contact-recipient span {
     font-weight: 700;
     color: var(--utp-blue);
 }
 
-.contact-card input,
-.contact-card textarea {
-    width: 100%;
-    border: 1px solid var(--gray-200);
-    border-radius: 12px;
-    padding: 12px 14px;
-    font: inherit;
-    background: var(--white);
-    color: var(--black);
-}
-
-.contact-card textarea {
-    min-height: 140px;
-    resize: vertical;
+.contact-recipient small {
+    color: var(--melgar-red);
+    font-weight: 700;
 }
 
 .footer {
@@ -698,6 +809,23 @@ a {
         padding: 20px 16px;
     }
 
+    .contact-card__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-picker__panel {
+        padding: 18px 14px 14px;
+        border-radius: 20px;
+    }
+
+    .contact-recipient {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    .contact-actions .btn,
     .survey-card .btn,
     .btn {
         width: 100%;

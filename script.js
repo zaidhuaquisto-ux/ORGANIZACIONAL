@@ -2,6 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearElement = document.getElementById('year');
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    const contactTrigger = document.querySelector('.contact-trigger');
+    const contactPicker = document.getElementById('contactPicker');
+    const contactClose = document.querySelector('.contact-close');
 
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
@@ -20,6 +23,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 navToggle.setAttribute('aria-expanded', 'false');
                 navToggle.setAttribute('aria-label', 'Abrir menú');
             });
+        });
+    }
+
+    if (contactTrigger && contactPicker) {
+        const openPicker = () => {
+            contactPicker.classList.add('is-open');
+            contactPicker.setAttribute('aria-hidden', 'false');
+        };
+
+        const closePicker = () => {
+            contactPicker.classList.remove('is-open');
+            contactPicker.setAttribute('aria-hidden', 'true');
+        };
+
+        contactTrigger.addEventListener('click', openPicker);
+
+        if (contactClose) {
+            contactClose.addEventListener('click', closePicker);
+        }
+
+        contactPicker.addEventListener('click', (event) => {
+            if (event.target instanceof HTMLElement && event.target.dataset.close === 'true') {
+                closePicker();
+            }
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && contactPicker.classList.contains('is-open')) {
+                closePicker();
+            }
         });
     }
 
