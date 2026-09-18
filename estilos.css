@@ -487,16 +487,18 @@ a {
     box-shadow: var(--shadow);
     padding: 30px 24px;
     text-align: center;
+    display: grid;
+    gap: 12px;
 }
 
 .survey-card h3 {
     color: var(--utp-blue);
-    margin-bottom: 12px;
+    margin-bottom: 0;
 }
 
 .survey-card p {
     color: var(--gray-700);
-    margin-bottom: 22px;
+    margin-bottom: 0;
 }
 
 .section--contact {
@@ -675,7 +677,22 @@ a {
         font-size: 1.8rem;
     }
 
-    .survey-card,
+    .survey-card {
+        width: 100%;
+        text-align: center;
+        padding: 20px 16px;
+        border-radius: 18px;
+    }
+
+    .survey-card h3 {
+        text-align: center;
+    }
+
+    .survey-card p {
+        text-align: center;
+        line-height: 1.6;
+    }
+
     .contact-card {
         text-align: left;
         padding: 20px 16px;
