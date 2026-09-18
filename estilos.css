@@ -60,12 +60,37 @@ a {
     justify-content: space-between;
     min-height: 80px;
     gap: 20px;
+    position: relative;
 }
 
 .brand {
     display: flex;
     align-items: center;
     gap: 14px;
+    min-width: 0;
+}
+
+.nav-toggle {
+    display: none;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(11, 44, 95, 0.12);
+    background: rgba(11, 44, 95, 0.04);
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--utp-blue);
+    border-radius: 999px;
 }
 
 .brand__logo {
@@ -531,19 +556,53 @@ a {
     }
 
     .nav {
-        flex-direction: column;
-        justify-content: center;
-        padding: 18px 0;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 16px 0;
+    }
+
+    .nav-toggle {
+        display: flex;
     }
 
     .nav-menu {
-        justify-content: center;
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(11, 44, 95, 0.08);
+    }
+
+    .nav-menu.is-open {
+        display: flex;
+    }
+
+    .nav-menu a {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: rgba(11, 44, 95, 0.03);
     }
 }
 
 @media (max-width: 520px) {
     .hero {
         padding-top: 64px;
+    }
+
+    .brand__text span {
+        font-size: 0.63rem;
+    }
+
+    .brand__text strong {
+        font-size: 0.82rem;
+    }
+
+    .brand__logo {
+        width: 48px;
+        height: 48px;
     }
 
     .hero__actions {
