@@ -481,7 +481,7 @@ a {
     display: grid;
     place-items: center;
     width: 100%;
-    height: 220px;
+    min-height: 220px;
     border-radius: 18px;
     background: linear-gradient(135deg, rgba(11, 44, 95, 0.08), rgba(217, 177, 95, 0.14));
     border: 2px dashed rgba(11, 44, 95, 0.2);
@@ -489,15 +489,14 @@ a {
     font-weight: 700;
     margin-bottom: 16px;
     overflow: hidden;
-    position: relative;
 }
 
 .member-photo-img {
     width: 100%;
     height: 100%;
+    min-height: 220px;
     object-fit: cover;
     display: block;
-    object-position: center;
 }
 
 .team-member h3 {
@@ -800,7 +799,11 @@ a {
     }
 
     .member-photo {
-        height: 180px;
+        min-height: 180px;
+    }
+
+    .member-photo-img {
+        min-height: 180px;
     }
 
     .survey-wrap {
