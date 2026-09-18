@@ -711,6 +711,10 @@ a {
         grid-template-columns: 1fr;
     }
 
+    .member-photo {
+        height: 180px;
+    }
+
     .survey-wrap {
         gap: 20px;
     }
