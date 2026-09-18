@@ -458,6 +458,47 @@ a {
     color: var(--gray-700);
 }
 
+.section--survey {
+    background: linear-gradient(180deg, var(--gray-100), rgba(217, 177, 95, 0.08));
+}
+
+.survey-wrap {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.survey-copy p {
+    color: var(--gray-700);
+    max-width: 700px;
+}
+
+.survey-panel {
+    display: flex;
+    justify-content: center;
+}
+
+.survey-card {
+    width: min(100%, 480px);
+    background: var(--white);
+    border: 1px solid rgba(11, 44, 95, 0.08);
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    padding: 30px 24px;
+    text-align: center;
+}
+
+.survey-card h3 {
+    color: var(--utp-blue);
+    margin-bottom: 12px;
+}
+
+.survey-card p {
+    color: var(--gray-700);
+    margin-bottom: 22px;
+}
+
 .section--contact {
     background: linear-gradient(180deg, var(--white), #f7f9fc);
 }
@@ -548,6 +589,7 @@ a {
 @media (max-width: 900px) {
     .hero__content,
     .intro-grid,
+    .survey-wrap,
     .contact-wrap,
     .card-grid,
     .service-grid,
